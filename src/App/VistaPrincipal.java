@@ -4,7 +4,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 
-public class Vista {
+public class VistaPrincipal {
 
 	private JFrame frame;
 
@@ -15,7 +15,7 @@ public class Vista {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Vista window = new Vista();
+					VistaPrincipal window = new VistaPrincipal();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -27,7 +27,7 @@ public class Vista {
 	/**
 	 * Create the application.
 	 */
-	public Vista() {
+	public VistaPrincipal() {
 		initialize();
 	}
 
