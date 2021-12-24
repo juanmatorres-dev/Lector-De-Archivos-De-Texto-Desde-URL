@@ -10,14 +10,24 @@ import java.awt.Font;
 import javax.swing.JTextPane;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
+import javax.swing.ImageIcon;
+import java.awt.Color;
 
 public class VistaPrincipal {
 
 	private JFrame ventana_principal;
+	public JButton btn_recuperar_contenido;
+	public JEditorPane url;
+	public JTextPane textPane;
+	public JLabel loading;
+	private JScrollPane input;
+	public JLabel aviso;
+	public JButton btn_reemplazar;
 
 	/**
 	 * Launch the application.
 	 */
+	/*
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -30,12 +40,14 @@ public class VistaPrincipal {
 			}
 		});
 	}
+	*/
 
 	/**
 	 * Create the application.
 	 */
 	public VistaPrincipal() {
 		initialize();
+		ventana_principal.setVisible(true);
 	}
 
 	/**
@@ -45,39 +57,55 @@ public class VistaPrincipal {
 		ventana_principal = new JFrame();
 		ventana_principal.setResizable(false);
 		ventana_principal.setTitle("Lector De Archivos De Texto Desde URL");
-		ventana_principal.setBounds(100, 100, 622, 389);
+		ventana_principal.setBounds(100, 100, 830, 389);
 		ventana_principal.setLocationRelativeTo(null);
-		ventana_principal.setVisible(true);
+		//ventana_principal.setVisible(true);
 		ventana_principal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		ventana_principal.getContentPane().setLayout(null);
 		
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(166, 32, 419, 41);
-		ventana_principal.getContentPane().add(scrollPane);
+		input = new JScrollPane();
+		input.setBounds(177, 38, 627, 41);
+		ventana_principal.getContentPane().add(input);
 		
-		JEditorPane editorPane = new JEditorPane();
-		scrollPane.setViewportView(editorPane);
+		url = new JEditorPane();
+		input.setViewportView(url);
 		
 		JLabel lblNewLabel = new JLabel("URL del archivo de texto :");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblNewLabel.setBounds(10, 24, 161, 49);
+		lblNewLabel.setBounds(21, 38, 161, 49);
 		ventana_principal.getContentPane().add(lblNewLabel);
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
-		scrollPane_1.setBounds(21, 135, 566, 202);
+		scrollPane_1.setBounds(21, 135, 783, 202);
 		ventana_principal.getContentPane().add(scrollPane_1);
 		
-		JTextPane textPane = new JTextPane();
+		textPane = new JTextPane();
 		scrollPane_1.setViewportView(textPane);
 		
 		JLabel lblContenidoDelArchivo = new JLabel("Contenido del archivo :");
 		lblContenidoDelArchivo.setHorizontalAlignment(SwingConstants.CENTER);
 		lblContenidoDelArchivo.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblContenidoDelArchivo.setBounds(216, 84, 179, 49);
+		lblContenidoDelArchivo.setBounds(176, 88, 179, 41);
 		ventana_principal.getContentPane().add(lblContenidoDelArchivo);
 		
-		JButton btnNewButton = new JButton("Recuperar contenido");
-		btnNewButton.setBounds(21, 98, 161, 23);
-		ventana_principal.getContentPane().add(btnNewButton);
+		btn_recuperar_contenido = new JButton("Recuperar contenido");
+		btn_recuperar_contenido.setBounds(21, 98, 161, 23);
+		ventana_principal.getContentPane().add(btn_recuperar_contenido);
+		
+		loading = new JLabel("");
+		loading.setVisible(false);
+		loading.setIcon(new ImageIcon("images/Loading.gif"));
+		loading.setBounds(343, 100, 18, 18);
+		ventana_principal.getContentPane().add(loading);
+		
+		aviso = new JLabel("");
+		aviso.setForeground(new Color(34, 139, 34));
+		aviso.setFont(new Font("Tahoma", Font.BOLD, 13));
+		aviso.setBounds(177, 4, 627, 28);
+		ventana_principal.getContentPane().add(aviso);
+		
+		btn_reemplazar = new JButton("Reemplazar");
+		btn_reemplazar.setBounds(21, 22, 108, 23);
+		ventana_principal.getContentPane().add(btn_reemplazar);
 	}
 }
