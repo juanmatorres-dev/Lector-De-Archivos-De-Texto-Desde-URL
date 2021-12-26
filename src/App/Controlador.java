@@ -51,7 +51,7 @@ public class Controlador implements MouseListener {
 		vista.btn_reemplazar.addMouseListener(this);
 		
 		obtenerYpegarContenidoDelPortapapeles();
-		getFixedUrl("https://juanmatorres-dev.me/test/test.txt");
+		getFixedUrl("https://juanmatorres-dev.me/Lector-De-Archivos-De-Texto-Desde-URL/version.txt");
 		
 	}
 	

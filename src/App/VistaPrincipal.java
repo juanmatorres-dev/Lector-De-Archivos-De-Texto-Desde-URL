@@ -112,6 +112,7 @@ public class VistaPrincipal {
 		ventana_principal.getContentPane().add(btn_reemplazar);
 		
 		version = new JLabel("");
+		version.setFont(new Font("Tahoma", Font.BOLD, 17));
 		version.setHorizontalAlignment(SwingConstants.CENTER);
 		version.setBounds(353, 348, 108, 14);
 		ventana_principal.getContentPane().add(version);
