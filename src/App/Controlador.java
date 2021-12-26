@@ -4,6 +4,7 @@
 package App;
 
 import java.awt.Color;
+import java.awt.Desktop;
 import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.DataFlavor;
@@ -15,10 +16,13 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
+import java.net.URI;
 import java.net.URL;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+
+import javax.swing.JOptionPane;
 
 
 /**
@@ -44,6 +48,8 @@ public class Controlador implements MouseListener {
 		
 		vista.btn_recuperar_contenido.addMouseListener(this);
 		vista.btn_reemplazar.addMouseListener(this);
+		vista.code.addMouseListener(this);
+		vista.author.addMouseListener(this);
 		
 		obtenerYpegarContenidoDelPortapapeles();
 		getFixedUrl("https://juanmatorres-dev.me/Lector-De-Archivos-De-Texto-Desde-URL/version.txt");
@@ -184,6 +190,20 @@ public class Controlador implements MouseListener {
 			//JOptionPane.showMessageDialog(null, "Reemplazar");
 			vista.url.setText("");
 			service.schedule(esperarAntesDeEmpezarCopiadoDelPortapapeles, 5, TimeUnit.MILLISECONDS);
+		}else if(e.getSource().equals(vista.code)) {
+			System.out.println("Code 🏹");
+			try {
+				Desktop.getDesktop().browse(new URI("https://github.com/juanmatorres-dev/Lector-De-Archivos-De-Texto-Desde-URL"));
+			} catch (Exception er) {
+				JOptionPane.showInternalMessageDialog(null, "Error ");
+			}
+		}else if(e.getSource().equals(vista.author)) {
+			System.out.println("author 😎");
+			try {
+				Desktop.getDesktop().browse(new URI("https://github.com/juanmatorres-dev"));
+			} catch (Exception er) {
+				JOptionPane.showInternalMessageDialog(null, "Error ");
+			}
 		}
 		
 	}

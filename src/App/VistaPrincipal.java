@@ -24,6 +24,8 @@ public class VistaPrincipal {
 	public JLabel aviso;
 	public JButton btn_reemplazar;
 	public JLabel version;
+	public JLabel code;
+	public JLabel author;
 
 	/**
 	 * Create the application.
@@ -98,5 +100,16 @@ public class VistaPrincipal {
 		version.setHorizontalAlignment(SwingConstants.CENTER);
 		version.setBounds(353, 348, 108, 14);
 		ventana_principal.getContentPane().add(version);
+		
+		code = new JLabel("Código del proyecto 🏹");
+		code.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		code.setBounds(21, 348, 147, 14);
+		ventana_principal.getContentPane().add(code);
+		
+		author = new JLabel("juanmatorres-dev");
+		author.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		author.setHorizontalAlignment(SwingConstants.RIGHT);
+		author.setBounds(657, 348, 147, 14);
+		ventana_principal.getContentPane().add(author);
 	}
 }
