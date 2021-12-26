@@ -12,6 +12,7 @@ import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import java.awt.Color;
+import java.awt.Cursor;
 
 public class VistaPrincipal {
 
@@ -23,6 +24,7 @@ public class VistaPrincipal {
 	private JScrollPane input;
 	public JLabel aviso;
 	public JButton btn_reemplazar;
+	public JLabel version;
 
 	/**
 	 * Launch the application.
@@ -57,7 +59,7 @@ public class VistaPrincipal {
 		ventana_principal = new JFrame();
 		ventana_principal.setResizable(false);
 		ventana_principal.setTitle("Lector De Archivos De Texto Desde URL");
-		ventana_principal.setBounds(100, 100, 830, 389);
+		ventana_principal.setBounds(100, 100, 830, 413);
 		ventana_principal.setLocationRelativeTo(null);
 		//ventana_principal.setVisible(true);
 		ventana_principal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -88,15 +90,16 @@ public class VistaPrincipal {
 		lblContenidoDelArchivo.setBounds(176, 88, 179, 41);
 		ventana_principal.getContentPane().add(lblContenidoDelArchivo);
 		
-		btn_recuperar_contenido = new JButton("Recuperar contenido");
-		btn_recuperar_contenido.setBounds(21, 98, 161, 23);
-		ventana_principal.getContentPane().add(btn_recuperar_contenido);
-		
 		loading = new JLabel("");
 		loading.setVisible(false);
 		loading.setIcon(new ImageIcon("images/Loading.gif"));
-		loading.setBounds(343, 100, 18, 18);
+		loading.setBounds(90, 100, 18, 18);
 		ventana_principal.getContentPane().add(loading);
+		
+		btn_recuperar_contenido = new JButton("Recuperar contenido");
+		btn_recuperar_contenido.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+		btn_recuperar_contenido.setBounds(21, 98, 161, 23);
+		ventana_principal.getContentPane().add(btn_recuperar_contenido);
 		
 		aviso = new JLabel("");
 		aviso.setForeground(new Color(34, 139, 34));
@@ -107,5 +110,10 @@ public class VistaPrincipal {
 		btn_reemplazar = new JButton("Reemplazar");
 		btn_reemplazar.setBounds(21, 22, 108, 23);
 		ventana_principal.getContentPane().add(btn_reemplazar);
+		
+		version = new JLabel("");
+		version.setHorizontalAlignment(SwingConstants.CENTER);
+		version.setBounds(353, 348, 108, 14);
+		ventana_principal.getContentPane().add(version);
 	}
 }

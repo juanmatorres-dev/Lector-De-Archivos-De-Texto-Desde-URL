@@ -51,6 +51,7 @@ public class Controlador implements MouseListener {
 		vista.btn_reemplazar.addMouseListener(this);
 		
 		obtenerYpegarContenidoDelPortapapeles();
+		getFixedUrl("https://juanmatorres-dev.me/test/test.txt");
 		
 	}
 	
@@ -100,20 +101,6 @@ public class Controlador implements MouseListener {
 		try {
 			URL url = new URL(link);
 			
-			/*
-			System.out.println(url.getFile());
-			System.out.println(url.getAuthority());
-			System.out.println(url.getContent());
-			System.out.println(url.getDefaultPort());
-			System.out.println(url.getHost());
-			System.out.println(url.getPath());
-			System.out.println(url.getPort());
-			System.out.println(url.getProtocol());
-			System.out.println(url.getQuery());
-			System.out.println(url.getRef());
-			System.out.println(url.getUserInfo());
-			*/
-			
 			System.out.println("-----");
 			
 			BufferedReader bfr = new BufferedReader(new InputStreamReader(url.openStream()));
@@ -138,18 +125,59 @@ public class Controlador implements MouseListener {
 		end_loading();
 	}
 	
+	/**
+	 * Obtiene los datos de una url fija y devuelve el contenido
+	 * @param url
+	 */
+	public String getFixedUrl(String url) {
+		String content = "?";
+		String tmp;
+		
+		try {
+			URL fixedUrl = new URL(url);
+			
+			System.out.println("-----");
+			
+			BufferedReader bfr = new BufferedReader(new InputStreamReader(fixedUrl.openStream()));
+			String inputLine;
+			while ((inputLine = bfr.readLine()) != null) {
+				tmp = vista.version.getText() + inputLine + "\n";
+				vista.version.setText(tmp);
+				System.out.println(inputLine);
+			}
+			
+			bfr.close();
+			
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		return content;
+	}
+	
 	public void start_loading() {
+		vista.btn_recuperar_contenido.setEnabled(false);
+		vista.btn_recuperar_contenido.setText("");
+		vista.btn_reemplazar.setEnabled(false);
 		vista.loading.setVisible(true);
 		System.out.println("loading...");
 	}
 	
 	public void end_loading() {
 		vista.loading.setVisible(false);
+		vista.btn_recuperar_contenido.setEnabled(true);
+		vista.btn_reemplazar.setEnabled(true);
+		vista.btn_recuperar_contenido.setText("Recuperar contenido");
 	}
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		if(e.getSource().equals(vista.btn_recuperar_contenido)) {
+		if(e.getSource().equals(vista.btn_recuperar_contenido) && vista.btn_recuperar_contenido.isEnabled()) {
 			//JOptionPane.showMessageDialog(null, "Recuperando contenido ...");
 			vista.textPane.setText("");
 			start_loading();
@@ -157,7 +185,7 @@ public class Controlador implements MouseListener {
 			 * Esperamos un milisegundo antes de empezar la lectura del fichero para que no se superponga con la operación de poner el loader
 			 */
 			service.schedule(esperarAntesDeEmpezarOperacion, 1, TimeUnit.MILLISECONDS);
-		}else if(e.getSource().equals(vista.btn_reemplazar)) {
+		}else if(e.getSource().equals(vista.btn_reemplazar) && vista.btn_reemplazar.isEnabled()) {
 			//JOptionPane.showMessageDialog(null, "Reemplazar");
 			vista.url.setText("");
 			service.schedule(esperarAntesDeEmpezarCopiadoDelPortapapeles, 5, TimeUnit.MILLISECONDS);
