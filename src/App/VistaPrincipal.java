@@ -1,7 +1,5 @@
 package App;
 
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JEditorPane;
@@ -13,6 +11,7 @@ import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import java.awt.Color;
 import java.awt.Cursor;
+import java.util.Locale;
 
 public class VistaPrincipal {
 
@@ -82,6 +81,7 @@ public class VistaPrincipal {
 		ventana_principal.getContentPane().add(scrollPane_1);
 		
 		textPane = new JTextPane();
+		textPane.setLocale(new Locale("es", "ES"));
 		scrollPane_1.setViewportView(textPane);
 		
 		JLabel lblContenidoDelArchivo = new JLabel("Contenido del archivo :");
