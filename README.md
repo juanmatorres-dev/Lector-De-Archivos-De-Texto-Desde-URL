@@ -3,6 +3,8 @@
 El Lector-De-Archivos-De-Texto-Desde-URL es un pequeño experimento de java para leer archivos archivos de texto desde una url.
 Seguramente alguna vez hallas leido archivos desde tu disco duro (una ruta local) pero esta vez lo haremos desde internet.
 
+![https://raw.githubusercontent.com/juanmatorres-dev/Lector-De-Archivos-De-Texto-Desde-URL/master/screenshot/Animation.gif](https://raw.githubusercontent.com/juanmatorres-dev/Lector-De-Archivos-De-Texto-Desde-URL/master/screenshot/Animation.gif)
+
 # Capturas de pantalla 
 ![https://raw.githubusercontent.com/juanmatorres-dev/Lector-De-Archivos-De-Texto-Desde-URL/master/screenshot/main_screen.png](https://raw.githubusercontent.com/juanmatorres-dev/Lector-De-Archivos-De-Texto-Desde-URL/master/screenshot/main_screen.png)
 
