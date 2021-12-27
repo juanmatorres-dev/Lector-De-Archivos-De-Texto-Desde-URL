@@ -50,6 +50,7 @@ public class Controlador implements MouseListener {
 		vista.btn_reemplazar.addMouseListener(this);
 		vista.code.addMouseListener(this);
 		vista.author.addMouseListener(this);
+		vista.license.addMouseListener(this);
 		
 		obtenerYpegarContenidoDelPortapapeles();
 		getFixedUrl("https://juanmatorres-dev.me/Lector-De-Archivos-De-Texto-Desde-URL/version.txt");
@@ -201,6 +202,13 @@ public class Controlador implements MouseListener {
 			System.out.println("author 😎");
 			try {
 				Desktop.getDesktop().browse(new URI("https://github.com/juanmatorres-dev"));
+			} catch (Exception er) {
+				JOptionPane.showInternalMessageDialog(null, "Error ");
+			}
+		}else if(e.getSource().equals(vista.license)) {
+			System.out.println("license 📚");
+			try {
+				Desktop.getDesktop().browse(new URI("https://creativecommons.org/licenses/by/4.0/deed.es"));
 			} catch (Exception er) {
 				JOptionPane.showInternalMessageDialog(null, "Error ");
 			}

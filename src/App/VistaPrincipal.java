@@ -26,6 +26,7 @@ public class VistaPrincipal {
 	public JLabel version;
 	public JLabel code;
 	public JLabel author;
+	public JLabel license;
 
 	/**
 	 * Create the application.
@@ -42,14 +43,14 @@ public class VistaPrincipal {
 		ventana_principal = new JFrame();
 		ventana_principal.setResizable(false);
 		ventana_principal.setTitle("Lector De Archivos De Texto Desde URL");
-		ventana_principal.setBounds(100, 100, 830, 413);
+		ventana_principal.setBounds(100, 100, 830, 423);
 		ventana_principal.setLocationRelativeTo(null);
 		//ventana_principal.setVisible(true);
 		ventana_principal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		ventana_principal.getContentPane().setLayout(null);
 		
 		input = new JScrollPane();
-		input.setBounds(177, 38, 627, 41);
+		input.setBounds(177, 46, 627, 41);
 		ventana_principal.getContentPane().add(input);
 		
 		url = new JEditorPane();
@@ -57,7 +58,7 @@ public class VistaPrincipal {
 		
 		JLabel lblNewLabel = new JLabel("URL del archivo de texto :");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblNewLabel.setBounds(21, 38, 161, 49);
+		lblNewLabel.setBounds(21, 46, 161, 49);
 		ventana_principal.getContentPane().add(lblNewLabel);
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
@@ -88,7 +89,7 @@ public class VistaPrincipal {
 		aviso = new JLabel("");
 		aviso.setForeground(new Color(34, 139, 34));
 		aviso.setFont(new Font("Tahoma", Font.BOLD, 13));
-		aviso.setBounds(177, 4, 627, 28);
+		aviso.setBounds(177, 7, 529, 28);
 		ventana_principal.getContentPane().add(aviso);
 		
 		btn_reemplazar = new JButton("Reemplazar");
@@ -111,5 +112,11 @@ public class VistaPrincipal {
 		author.setHorizontalAlignment(SwingConstants.RIGHT);
 		author.setBounds(657, 348, 147, 14);
 		ventana_principal.getContentPane().add(author);
+		
+		license = new JLabel("");
+		license.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		license.setIcon(new ImageIcon("C:\\WorkSpaces\\DAW1(2020-21)\\LectorDeArchivosDeTextoDesdeURL\\images\\88x31.png"));
+		license.setBounds(716, 4, 88, 31);
+		ventana_principal.getContentPane().add(license);
 	}
 }
