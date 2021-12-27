@@ -15,6 +15,10 @@ Seguramente alguna vez hallas leido archivos desde tu disco duro (una ruta local
 
 - He usado esta [información](http://chuwiki.chuidiang.org/index.php?title=Uso_del_Clipboard_del_sistema) para leer la última entrada del portapeles (no tiene en cuenta, el historial del portapapeles).
 
+# Pruébalo tú mismo
+
+Puedes usar este repositorio con archivos de texto para probar la app o usar cualquier url que sea de un archivo de texto [https://github.com/juanmatorres-dev/test](https://github.com/juanmatorres-dev/test)
+
 # Versión
 
 Nota : La versión del programa se obtiene de este archivo (se comprueba en cada inicio)
