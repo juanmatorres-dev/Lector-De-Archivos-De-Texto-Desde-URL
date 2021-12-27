@@ -24,3 +24,9 @@ Puedes usar este repositorio con archivos de texto para probar la app o usar cua
 Nota : La versión del programa se obtiene de este archivo (se comprueba en cada inicio)
 
 [https://juanmatorres-dev.me/Lector-De-Archivos-De-Texto-Desde-URL/version.txt](https://juanmatorres-dev.me/Lector-De-Archivos-De-Texto-Desde-URL/version.txt)
+
+# Licencia
+[![https://creativecommons.org/licenses/by/4.0/deed.es](https://raw.githubusercontent.com/juanmatorres-dev/Lector-De-Archivos-De-Texto-Desde-URL/master/images/88x31.png)](https://creativecommons.org/licenses/by/4.0/deed.es)
+
+
+
