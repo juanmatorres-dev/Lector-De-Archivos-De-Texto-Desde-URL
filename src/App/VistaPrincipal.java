@@ -115,7 +115,7 @@ public class VistaPrincipal {
 		
 		license = new JLabel("");
 		license.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		license.setIcon(new ImageIcon("C:\\WorkSpaces\\DAW1(2020-21)\\LectorDeArchivosDeTextoDesdeURL\\images\\88x31.png"));
+		license.setIcon(new ImageIcon("images/88x31.png"));
 		license.setBounds(716, 4, 88, 31);
 		ventana_principal.getContentPane().add(license);
 	}
